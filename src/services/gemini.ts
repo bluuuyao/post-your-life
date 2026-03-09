@@ -1,7 +1,11 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { NicheResult, QuizAnswers, GeneratedPost } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+// Log the API key status (masked for security) to help with debugging Vercel deployment
+const apiKey = process.env.GEMINI_API_KEY || "";
+console.log("API Key status:", apiKey ? `Present (starts with ${apiKey.substring(0, 4)}...)` : "Missing");
+
+const ai = new GoogleGenAI({ apiKey });
 
 export async function analyzeNiche(answers: QuizAnswers): Promise<NicheResult> {
   const prompt = `
