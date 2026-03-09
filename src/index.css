@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#fafaf9] text-zinc-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .brutal-border {
+    border: 2px solid #18181b;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+
+  .brutal-btn {
+    border: 2px solid #18181b;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    background-color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: 700;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .brutal-btn:hover {
+    transform: translate(-0.125rem, -0.125rem);
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+  }
+
+  .brutal-btn:active {
+    transform: translate(0.125rem, 0.125rem);
+    box-shadow: none;
+  }
+}
+
